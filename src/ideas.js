@@ -12,7 +12,7 @@ export class Ideas {
 	}
 
 	activate() {
-		this.http.jsonp(this.url).then(response => { 
+		return this.http.jsonp(this.url).then(response => { 
 			this.images = response.content.items;
 		});
 	}
