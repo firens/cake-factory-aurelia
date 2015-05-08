@@ -1,0 +1,19 @@
+<template>
+  <section>
+    <form role="form" submit.delegate="createCake()">
+      <div class="form-group">
+        <label for="fn">Name</label>
+        <input type="text" value.bind="cakeValues.name" class="form-control" id="fn" placeholder="Choose a name for your cake">
+      </div>
+      <div class="form-group">
+        <label for="ln">Ingredient</label>
+        <input type="text" value.bind="cakeValues.ingredient" class="form-control" id="ln" placeholder="What is the main ingredient for your cake ?">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </section>
+  <br/>
+  <table if.bind="cakes.length > 0" class="table">
+    <tr repeat.for="cake of cakes" model.bind="cake"><td>${cake.name}</td><td>${cake.ingredient}</td></tr>
+  </table>
+</template>
